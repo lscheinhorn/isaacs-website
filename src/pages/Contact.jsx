@@ -27,24 +27,32 @@ function Contact() {
 
   return (
     <main className="flex-grow">
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-10 max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-green-800">Start a project</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl">Tell Isaac what you want the yard to become.</h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            Share a few details about the space, the work you have in mind, and the best way to reach you.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Get in Touch</h3>
-            <p className="text-gray-700 mb-4">
-              Ready to transform your outdoor space? Contact us today for a free consultation.
-            </p>
-            <div className="space-y-2">
-              <p><strong>Phone:</strong> (607) 555-0123</p>
-              <p><strong>Email:</strong> isaac@isaacslandscaping.com</p>
-              <p><strong>Service Area:</strong> Ithaca, NY and nearby communities</p>
+            <div className="rounded border border-stone-200 bg-white p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-slate-950">Contact details</h3>
+              <div className="mt-5 space-y-4 text-slate-700">
+                <p><strong className="text-slate-950">Phone:</strong> (607) 555-0123</p>
+                <p><strong className="text-slate-950">Email:</strong> isaac@isaacslandscaping.com</p>
+                <p><strong className="text-slate-950">Service Area:</strong> Ithaca, NY and nearby communities</p>
+              </div>
+              <p className="mt-6 text-sm leading-6 text-slate-600">
+                Replace the phone number and email before public launch if these are placeholders.
+              </p>
             </div>
           </div>
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5 rounded border border-stone-200 bg-white p-6 shadow-sm">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-slate-800">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -52,11 +60,11 @@ function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+                  className="mt-2 block w-full rounded border border-stone-300 px-3 py-3 shadow-sm focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-slate-800">Email</label>
                 <input
                   type="email"
                   id="email"
@@ -64,36 +72,36 @@ function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+                  className="mt-2 block w-full rounded border border-stone-300 px-3 py-3 shadow-sm focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-slate-800">Message</label>
                 <textarea
                   id="message"
                   name="message"
-                  rows="4"
+                  rows="6"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+                  className="mt-2 block w-full rounded border border-stone-300 px-3 py-3 shadow-sm focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                className="w-full rounded bg-green-800 px-4 py-3 font-bold text-white transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2"
               >
                 Send Message
               </button>
               {status && (
-                <p className="text-sm text-green-700" role="status">
+                <p className="text-sm text-green-800" role="status">
                   {status}
                 </p>
               )}
             </form>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   )
 }

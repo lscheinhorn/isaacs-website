@@ -2,28 +2,34 @@ function Work() {
   const assetPath = (fileName) => `${import.meta.env.BASE_URL}assets/${fileName}`
 
   const projects = [
-    { id: 1, title: 'Garden Makeover', image: assetPath('project-garden.svg'), description: 'Complete garden redesign with new plants and pathways.' },
-    { id: 2, title: 'Patio Installation', image: assetPath('project-patio.svg'), description: 'Beautiful stone patio for outdoor entertaining.' },
-    { id: 3, title: 'Lawn Renovation', image: assetPath('project-lawn.svg'), description: 'Full lawn restoration and maintenance plan.' },
-    { id: 4, title: 'Retaining Wall', image: assetPath('project-wall.svg'), description: 'Sturdy retaining wall for slope stabilization.' },
+    { id: 1, title: 'Garden Makeover', image: assetPath('project-garden.svg'), description: 'Layered planting beds, fresh edging, and a clearer path through the yard.' },
+    { id: 2, title: 'Patio Installation', image: assetPath('project-patio.svg'), description: 'A compact stone patio planned for outdoor meals, seating, and easy upkeep.' },
+    { id: 3, title: 'Lawn Renovation', image: assetPath('project-lawn.svg'), description: 'Turf repair, cleanup, and a maintenance plan for a healthier growing season.' },
+    { id: 4, title: 'Retaining Wall', image: assetPath('project-wall.svg'), description: 'Stone wall work that helps manage slope, drainage, and planting space.' },
   ]
 
   return (
     <main className="flex-grow">
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Work</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-10 max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-green-800">Selected work</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl">Clean, useful upgrades for everyday outdoor life.</h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            These examples show the kinds of projects Isaac can help plan and build. Real customer photos can replace these illustrations as the portfolio grows.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map(project => (
-            <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <article key={project.id} className="overflow-hidden rounded border border-stone-200 bg-white shadow-sm">
               <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-gray-600">{project.description}</p>
+              <div className="p-5">
+                <h3 className="text-xl font-semibold text-slate-950">{project.title}</h3>
+                <p className="mt-2 leading-7 text-slate-700">{project.description}</p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
     </main>
   )
 }

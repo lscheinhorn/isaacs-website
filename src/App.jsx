@@ -9,7 +9,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-stone-50 text-slate-900">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

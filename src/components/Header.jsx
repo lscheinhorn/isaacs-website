@@ -1,28 +1,42 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
+
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/work', label: 'Work' },
+  { to: '/contact', label: 'Contact' },
+]
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const linkClass = ({ isActive }) =>
+    `rounded px-3 py-2 text-sm font-medium transition ${
+      isActive ? 'bg-white text-green-800' : 'text-green-50 hover:bg-green-700 hover:text-white'
+    }`
 
   return (
-    <header className="bg-green-600 text-white shadow">
+    <header className="sticky top-0 z-20 bg-green-800 text-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-2xl font-bold">
-            <Link to="/" className="hover:text-green-200">Isaac's Landscaping</Link>
+          <h1 className="text-xl font-bold tracking-wide sm:text-2xl">
+            <Link to="/" className="hover:text-green-100">Isaac's Landscaping</Link>
           </h1>
           <nav className="hidden md:block">
-            <ul className="flex space-x-4">
-              <li><Link to="/" className="hover:text-green-200">Home</Link></li>
-              <li><Link to="/about" className="hover:text-green-200">About</Link></li>
-              <li><Link to="/work" className="hover:text-green-200">Work</Link></li>
-              <li><Link to="/contact" className="hover:text-green-200">Contact</Link></li>
+            <ul className="flex items-center gap-1">
+              {navItems.map((item) => (
+                <li key={item.to}>
+                  <NavLink to={item.to} className={linkClass}>
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </nav>
           <button
-            className="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600 rounded"
+            className="rounded p-2 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-800 md:hidden"
             onClick={toggleMenu}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -35,11 +49,14 @@ function Header() {
         </div>
         {isMenuOpen && (
           <nav id="mobile-navigation" className="md:hidden">
-            <ul className="flex flex-col space-y-2 py-4">
-              <li><Link to="/" className="hover:text-green-200 block" onClick={toggleMenu}>Home</Link></li>
-              <li><Link to="/about" className="hover:text-green-200 block" onClick={toggleMenu}>About</Link></li>
-              <li><Link to="/work" className="hover:text-green-200 block" onClick={toggleMenu}>Work</Link></li>
-              <li><Link to="/contact" className="hover:text-green-200 block" onClick={toggleMenu}>Contact</Link></li>
+            <ul className="flex flex-col gap-2 pb-4">
+              {navItems.map((item) => (
+                <li key={item.to}>
+                  <NavLink to={item.to} className={linkClass} onClick={toggleMenu}>
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </nav>
         )}
