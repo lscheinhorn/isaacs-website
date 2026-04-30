@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+const contactEmail = 'lukescheinhorn@gmail.com'
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,7 +22,7 @@ function Contact() {
     const subject = encodeURIComponent(`Landscaping inquiry from ${formData.name}`)
     const body = encodeURIComponent(`${formData.message}\n\nFrom: ${formData.name}\nEmail: ${formData.email}`)
 
-    window.location.href = `mailto:isaac@isaacslandscaping.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`
     setStatus('Your email app should open with this message ready to send.')
     setFormData({ name: '', email: '', message: '' })
   }
@@ -41,7 +43,7 @@ function Contact() {
               <h3 className="text-xl font-semibold text-slate-950">Contact details</h3>
               <div className="mt-5 space-y-4 text-slate-700">
                 <p><strong className="text-slate-950">Phone:</strong> (607) 555-0123</p>
-                <p><strong className="text-slate-950">Email:</strong> isaac@isaacslandscaping.com</p>
+                <p><strong className="text-slate-950">Email:</strong> {contactEmail}</p>
                 <p><strong className="text-slate-950">Service Area:</strong> Ithaca, NY and nearby communities</p>
               </div>
               <p className="mt-6 text-sm leading-6 text-slate-600">
