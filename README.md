@@ -46,6 +46,16 @@ Deployment runs through GitHub Actions in `.github/workflows/deploy.yml` wheneve
 
 The app uses hash routing so GitHub Pages can serve nested pages without a custom server fallback.
 
+## Contact Form
+
+The contact form supports a Formspree endpoint through a Vite environment variable:
+
+```bash
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+```
+
+If no endpoint is configured, the form falls back to a `mailto:` link using the contact email in `src/pages/Contact.jsx`.
+
 ## Content Notes
 
 Before treating the site as final, replace placeholder contact details and swap in real project photos when available.

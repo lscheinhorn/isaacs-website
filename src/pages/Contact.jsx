@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 const contactEmail = 'lukescheinhorn@gmail.com'
+const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ function Contact() {
     message: ''
   })
   const [status, setStatus] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -17,8 +19,43 @@ function Contact() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setStatus('')
+
+    if (formspreeEndpoint) {
+      setIsSubmitting(true)
+
+      try {
+        const response = await fetch(formspreeEndpoint, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: `Landscaping inquiry from ${formData.name}`,
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error('Form submission failed')
+        }
+
+        setStatus('Thanks, your message was sent. Isaac will follow up soon.')
+        setFormData({ name: '', email: '', message: '' })
+      } catch {
+        setStatus(`Something went wrong. Please email ${contactEmail} directly.`)
+      } finally {
+        setIsSubmitting(false)
+      }
+
+      return
+    }
+
     const subject = encodeURIComponent(`Landscaping inquiry from ${formData.name}`)
     const body = encodeURIComponent(`${formData.message}\n\nFrom: ${formData.name}\nEmail: ${formData.email}`)
 
@@ -91,9 +128,10 @@ function Contact() {
               </div>
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full rounded bg-green-800 px-4 py-3 font-bold text-white transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
               {status && (
                 <p className="text-sm text-green-800" role="status">
