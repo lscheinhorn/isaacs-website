@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title">
+  <title id="title">Stone patio installation</title>
+  <rect width="800" height="500" fill="#dcecf8"/>
+  <path d="M0 260h800v240H0Z" fill="#4b9f5f"/>
+  <path d="M120 500 220 235h360l100 265Z" fill="#d7d2c2"/>
+  <g stroke="#9b9485" stroke-width="6"><path d="M188 310h424"/><path d="M162 380h476"/><path d="M137 450h526"/><path d="M282 235l-40 265"/><path d="M400 235v265"/><path d="M518 235l40 265"/></g>
+  <rect x="102" y="205" width="596" height="40" rx="12" fill="#8b5e34"/>
+  <rect x="138" y="145" width="72" height="90" rx="8" fill="#166534"/>
+  <rect x="590" y="145" width="72" height="90" rx="8" fill="#166534"/>
+  <circle cx="174" cy="126" r="46" fill="#65a30d"/><circle cx="626" cy="126" r="46" fill="#65a30d"/>
+</svg>

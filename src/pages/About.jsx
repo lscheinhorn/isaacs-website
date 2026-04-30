@@ -1,11 +1,13 @@
 function About() {
+  const profileImage = `${import.meta.env.BASE_URL}assets/profile-landscaper.svg`
+
   return (
     <main className="flex-grow">
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">About Isaac</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <img src="/assets/isaac-profile.jpg" alt="Isaac, the landscaper" className="w-full rounded-lg shadow-lg" />
+            <img src={profileImage} alt="Isaac, the landscaper" className="w-full rounded-lg shadow-lg" />
           </div>
           <div>
             <p className="text-gray-700 mb-4">

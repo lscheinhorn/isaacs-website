@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title">
+  <title id="title">Lawn renovation</title>
+  <rect width="800" height="500" fill="#cdeffd"/>
+  <path d="M0 220c122-40 246-36 372 12 142 54 285 46 428-26v294H0Z" fill="#65b96a"/>
+  <path d="M0 330c150-62 304-58 462 12 118 52 231 54 338 6v152H0Z" fill="#2f8f46"/>
+  <g stroke="#a3e635" stroke-width="5" opacity=".7"><path d="M40 395c170-45 330-42 480 8 94 32 174 34 240 8"/><path d="M20 450c180-48 350-42 510 16 84 30 160 32 230 5"/></g>
+  <g transform="translate(124 208)"><rect x="0" y="46" width="154" height="70" rx="14" fill="#166534"/><circle cx="34" cy="124" r="22" fill="#27272a"/><circle cx="128" cy="124" r="22" fill="#27272a"/><path d="M145 50 230 0" stroke="#52525b" stroke-width="12" stroke-linecap="round"/><rect x="26" y="20" width="86" height="38" rx="10" fill="#facc15"/></g>
+</svg>

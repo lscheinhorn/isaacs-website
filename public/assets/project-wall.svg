@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title">
+  <title id="title">Retaining wall</title>
+  <rect width="800" height="500" fill="#dff4ff"/>
+  <path d="M0 195c150-68 306-72 468-12 130 48 240 50 332 6v311H0Z" fill="#65b96a"/>
+  <path d="M0 310h800v190H0Z" fill="#2f8f46"/>
+  <g transform="translate(80 226)">
+    <rect width="640" height="54" fill="#9ca3af"/><rect y="54" width="640" height="54" fill="#78716c"/><rect y="108" width="640" height="54" fill="#a8a29e"/>
+    <g stroke="#57534e" stroke-width="5"><path d="M0 54h640M0 108h640"/><path d="M80 0v54M220 0v54M360 0v54M500 0v54"/><path d="M145 54v54M285 54v54M425 54v54M565 54v54"/><path d="M80 108v54M220 108v54M360 108v54M500 108v54"/></g>
+  </g>
+  <g fill="#166534"><circle cx="130" cy="205" r="34"/><circle cx="660" cy="198" r="42"/><circle cx="590" cy="210" r="30"/></g>
+  <g fill="#fef08a"><circle cx="105" cy="190" r="10"/><circle cx="620" cy="186" r="11"/><circle cx="690" cy="212" r="10"/></g>
+</svg>

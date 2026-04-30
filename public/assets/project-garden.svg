@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title">
+  <title id="title">Garden makeover</title>
+  <rect width="800" height="500" fill="#dff3e5"/>
+  <path d="M0 250c130-54 252-56 365-8 144 62 289 58 435-12v270H0Z" fill="#379957"/>
+  <path d="M95 500c16-88 82-162 198-222 55-28 124-54 207-78-100 70-167 137-200 202-16 31-24 64-25 98Z" fill="#eee8d5"/>
+  <g fill="#14532d"><ellipse cx="160" cy="360" rx="100" ry="34"/><ellipse cx="600" cy="350" rx="128" ry="42"/></g>
+  <g fill="#84cc16"><ellipse cx="135" cy="312" rx="28" ry="52"/><ellipse cx="190" cy="306" rx="32" ry="58"/><ellipse cx="565" cy="292" rx="34" ry="64"/><ellipse cx="640" cy="302" rx="36" ry="60"/></g>
+  <g fill="#f9a8d4"><circle cx="102" cy="328" r="14"/><circle cx="215" cy="292" r="13"/><circle cx="605" cy="270" r="15"/></g>
+  <g fill="#fef08a"><circle cx="168" cy="286" r="13"/><circle cx="536" cy="318" r="14"/><circle cx="682" cy="292" r="13"/></g>
+</svg>

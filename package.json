@@ -1,9 +1,12 @@
 {
-  "name": "isaac-website",
+  "name": "isaacs-website",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://lukescheinhorn.github.io/isaac-website",
+  "homepage": "https://lscheinhorn.github.io/isaacs-website",
   "type": "module",
+  "engines": {
+    "node": ">=20 <23"
+  },
   "scripts": {
     "dev": "vite",
     "start": "vite",
@@ -12,7 +15,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rollup/rollup-darwin-arm64": "^4.60.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.14.2"

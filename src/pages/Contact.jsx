@@ -6,6 +6,7 @@ function Contact() {
     email: '',
     message: ''
   })
+  const [status, setStatus] = useState('')
 
   const handleChange = (e) => {
     setFormData({
@@ -16,9 +17,11 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // For now, just log; in real app, send to backend
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will get back to you soon.')
+    const subject = encodeURIComponent(`Landscaping inquiry from ${formData.name}`)
+    const body = encodeURIComponent(`${formData.message}\n\nFrom: ${formData.name}\nEmail: ${formData.email}`)
+
+    window.location.href = `mailto:isaac@isaacslandscaping.com?subject=${subject}&body=${body}`
+    setStatus('Your email app should open with this message ready to send.')
     setFormData({ name: '', email: '', message: '' })
   }
 
@@ -35,7 +38,7 @@ function Contact() {
             <div className="space-y-2">
               <p><strong>Phone:</strong> (607) 555-0123</p>
               <p><strong>Email:</strong> isaac@isaacslandscaping.com</p>
-              <p><strong>Address:</strong> 123 Garden Street, Ithaca, NY 14850</p>
+              <p><strong>Service Area:</strong> Ithaca, NY and nearby communities</p>
             </div>
           </div>
           <div>
@@ -82,6 +85,11 @@ function Contact() {
               >
                 Send Message
               </button>
+              {status && (
+                <p className="text-sm text-green-700" role="status">
+                  {status}
+                </p>
+              )}
             </form>
           </div>
         </div>

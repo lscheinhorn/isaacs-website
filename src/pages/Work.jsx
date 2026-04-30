@@ -1,9 +1,11 @@
 function Work() {
+  const assetPath = (fileName) => `${import.meta.env.BASE_URL}assets/${fileName}`
+
   const projects = [
-    { id: 1, title: 'Garden Makeover', image: '/assets/project1.jpg', description: 'Complete garden redesign with new plants and pathways.' },
-    { id: 2, title: 'Patio Installation', image: '/assets/project2.jpg', description: 'Beautiful stone patio for outdoor entertaining.' },
-    { id: 3, title: 'Lawn Renovation', image: '/assets/project3.jpg', description: 'Full lawn restoration and maintenance plan.' },
-    { id: 4, title: 'Retaining Wall', image: '/assets/project4.jpg', description: 'Sturdy retaining wall for slope stabilization.' },
+    { id: 1, title: 'Garden Makeover', image: assetPath('project-garden.svg'), description: 'Complete garden redesign with new plants and pathways.' },
+    { id: 2, title: 'Patio Installation', image: assetPath('project-patio.svg'), description: 'Beautiful stone patio for outdoor entertaining.' },
+    { id: 3, title: 'Lawn Renovation', image: assetPath('project-lawn.svg'), description: 'Full lawn restoration and maintenance plan.' },
+    { id: 4, title: 'Retaining Wall', image: assetPath('project-wall.svg'), description: 'Sturdy retaining wall for slope stabilization.' },
   ]
 
   return (
